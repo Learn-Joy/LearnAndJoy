@@ -1,8 +1,12 @@
 package com.mirzahansuslu.learnandjoy
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.mirzahansuslu.learnandjoy.databinding.ActivitySigninBinding
@@ -45,6 +49,35 @@ class SignInActivity : AppCompatActivity() {
 
             }
         }
+        binding.forgotPasswordTv.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Forgot Password")
+            val view = layoutInflater.inflate(R.layout.activity_forgot_password,null)
+            val username = view.findViewById<EditText>(R.id.et_username)
+            builder.setView(view)
+            builder.setPositiveButton("Reset", DialogInterface.OnClickListener { _, _ ->
+                forgotPassword(username)
+            })
+            builder.setNegativeButton("close", DialogInterface.OnClickListener { _, _ ->  })
+            builder.show()
+        }
+    }
+    private fun forgotPassword(username : EditText){
+        if (username.text.toString().isEmpty()) {
+            return
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(username.text.toString()).matches()) {
+            return
+        }
+
+        firebaseAuth.sendPasswordResetEmail(username.text.toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this,"Email sent.",Toast.LENGTH_SHORT).show()
+                }
+            }
+
     }
 
     override fun onStart() {
