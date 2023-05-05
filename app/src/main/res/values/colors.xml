@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Standard colors for the app-->
+    <color name="dark_blue_for_buttons">#03045e</color>
+    <color name="home_page_menu_color">#0077b6</color>
+    <color name="level_1_color">#ade8f4</color>
+    <color name="level_2_color">#669bbc</color>
+    <color name="level_3_color">#1d3557</color>
+    <color name="successful_green_color">#06d6a0</color>
+    <color name="error_red_color">#bc4749</color>
+    <color name="test_background1">#faf0ca</color>
+    <color name="test_background2">#e8e8e4</color>
+
 </resources>
