@@ -18,5 +18,7 @@
     <color name="error_red_color">#bc4749</color>
     <color name="test_background1">#faf0ca</color>
     <color name="test_background2">#e8e8e4</color>
+    <color name="default_option_background_color">#ade8f4</color>
+    <color name="selected_option_background_color">#415a77</color>
 
 </resources>
