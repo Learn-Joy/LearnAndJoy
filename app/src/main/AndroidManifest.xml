@@ -11,12 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndJoy"
         tools:targetApi="31">
-        <activity android:name=".SignInActivity">
-
-        </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".SignUpActivity"
             android:exported="true">
