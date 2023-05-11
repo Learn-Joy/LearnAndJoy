@@ -11,7 +11,6 @@ import com.mirzahansuslu.learnandjoy.databinding.ActivitySignupBinding
 class SignUpActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var button2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +23,6 @@ class SignUpActivity : AppCompatActivity(){
         binding.textView.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
-        }
-        button2 = findViewById(R.id.button2)
-        button2.setOnClickListener{
-                val intent = Intent (this, QuizActivity::class.java)
-                startActivity(intent)
         }
         binding.button.setOnClickListener {
             val username = binding.usernameTv.text.toString()
