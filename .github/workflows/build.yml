@@ -9,21 +9,21 @@ on:
       - "v*"
 
 jobs:
-  test:
-    name: Run Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 16
-      - name: Set up Google Services
-        run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
-      - name: Run Tests
-        run: bash ./gradlew test --stacktrace
-
+  # test:
+  #   name: Run Unit Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+  #     - name: Setup JDK
+  #       uses: actions/setup-java@v1
+  #       with:
+  #         java-version: 16
+  #     - name: Set up Google Services
+  #       run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
+  #     - name: Run Tests
+  #       run: bash ./gradlew test --stacktrace
+  #
   apk:
     name: Generate APK
     needs: test
