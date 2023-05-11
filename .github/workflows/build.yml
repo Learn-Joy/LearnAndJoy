@@ -18,7 +18,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 11
+          java-version: 16
       - name: Set up Google Services
         run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
       - name: Run Tests
@@ -34,7 +34,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 11
+          java-version: 16
       - name: Set up Google Services
         run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
       - name: Build APK
