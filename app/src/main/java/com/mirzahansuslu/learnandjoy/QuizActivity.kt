@@ -47,29 +47,28 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.optionOneTV -> {
+                makeAllDefaultBackground()
                 optionOneTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
-                optionTwoTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionThreeTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionFourTV?.setBackgroundResource(R.drawable.default_option_border_bg)
             }
             R.id.optionTwoTV -> {
+                makeAllDefaultBackground()
                 optionTwoTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
-                optionThreeTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionFourTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionOneTV?.setBackgroundResource(R.drawable.default_option_border_bg)
             }
             R.id.optionThreeTV -> {
+                makeAllDefaultBackground()
                 optionThreeTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
-                optionTwoTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionFourTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionOneTV?.setBackgroundResource(R.drawable.default_option_border_bg)
             }
             R.id.optionFourTV -> {
+                makeAllDefaultBackground()
                 optionFourTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
-                optionTwoTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionThreeTV?.setBackgroundResource(R.drawable.default_option_border_bg)
-                optionOneTV?.setBackgroundResource(R.drawable.default_option_border_bg)
             }
         }
+    }
+
+    private fun makeAllDefaultBackground(){
+        optionOneTV?.setBackgroundResource(R.drawable.default_option_border_bg)
+        optionTwoTV?.setBackgroundResource(R.drawable.default_option_border_bg)
+        optionThreeTV?.setBackgroundResource(R.drawable.default_option_border_bg)
+        optionFourTV?.setBackgroundResource(R.drawable.default_option_border_bg)
     }
 }
