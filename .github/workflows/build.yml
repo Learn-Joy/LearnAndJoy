@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Set up Google Services
+        run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
       - name: Run Tests
         run: bash ./gradlew test --stacktrace
 
@@ -33,6 +35,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Set up Google Services
+        run: echo "${{ secrets.GOOGLE_SERVICES_AUTH }}" | base64 --decode > app/google-services.json
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
@@ -67,5 +71,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: apk/app-debug.apk
-          asset_name: MensaApp.apk
+          asset_name: LearnAndJoy.apk
           asset_content_type: application/zip
