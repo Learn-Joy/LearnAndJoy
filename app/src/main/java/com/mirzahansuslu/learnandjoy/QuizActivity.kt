@@ -121,22 +121,22 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         when (view.id) {
             R.id.optionOneTV -> {
                 makeAllDefaultBackground()
-                optionOneTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
+                optionOneTV.setBackgroundResource(R.drawable.selected_option_border_bg)
                 selectedAnswer = 1
             }
             R.id.optionTwoTV -> {
                 makeAllDefaultBackground()
-                optionTwoTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
+                optionTwoTV.setBackgroundResource(R.drawable.selected_option_border_bg)
                 selectedAnswer = 2
             }
             R.id.optionThreeTV -> {
                 makeAllDefaultBackground()
-                optionThreeTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
+                optionThreeTV.setBackgroundResource(R.drawable.selected_option_border_bg)
                 selectedAnswer = 3
             }
             R.id.optionFourTV -> {
                 makeAllDefaultBackground()
-                optionFourTV?.setBackgroundResource(R.drawable.selected_option_border_bg)
+                optionFourTV.setBackgroundResource(R.drawable.selected_option_border_bg)
                 selectedAnswer = 4
             }
             R.id.submitButton -> {
@@ -204,7 +204,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
     private var score = 0 // add a score variable to the class
     private fun checkAnswer() {
         val currentQuestion = questionList[currentQuestionIndex]
-        if (selectedAnswer.toString() == currentQuestion.correctAnswer) {
+        if (selectedAnswer.toString().equals(currentQuestion.correctAnswer)) {
             // answer is correct
             score++
             // Add your code here to handle a correct answer
