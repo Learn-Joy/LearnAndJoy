@@ -89,20 +89,25 @@
             tools:text="Option 4)"
             android:background="@drawable/default_option_border_bg">
         </TextView>
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Previous"
+            android:backgroundTint="@color/dark_blue_for_buttons"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:backgroundTint="@color/dark_blue_for_buttons"
+            android:padding="12dp"
             android:text="@string/submit"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="italic"
-            android:backgroundTint="@color/dark_blue_for_buttons"
-            app:cornerRadius="18dp"
-            android:padding="12dp">
-        </com.google.android.material.button.MaterialButton>
+            app:cornerRadius="18dp"></com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/feedbackButton"
